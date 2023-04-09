@@ -6,7 +6,7 @@
 /*   By: rertzer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:51:06 by rertzer           #+#    #+#             */
-/*   Updated: 2023/04/01 12:38:56 by rertzer          ###   ########.fr       */
+/*   Updated: 2023/04/09 14:22:13 by rertzer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,31 @@
 // public
 Fixed::Fixed(void):_number(0)
 {
-	std::cout << "Default constructor called\n";
+	return ;
 }
 
 Fixed::Fixed(int const integer)
 {
-	std::cout << "Int constructor called\n";
 	this->_number = integer << this->_fract;
 }
 
 Fixed::Fixed(float const flt)
 {
-	std::cout << "Float constructor called\n";
 	this->_number  = (int)roundf(flt * (1 << this->_fract));
-	std::cout << "flt: " << flt << " numb: " << this->_number << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy constructor called\n";
 	this->_number = src.getRawBits();
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called\n";
+	return ;
 }
 
 Fixed &	Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Copy assignment operator called\n";
 	this->_number = rhs.getRawBits();
 	return *this;
 }
@@ -164,8 +159,8 @@ Fixed	Fixed::operator--(int)
 	this->_number -= 1;
 	return old;
 }
-// static public
 
+// static public
 Fixed &	Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a._number < b._number)

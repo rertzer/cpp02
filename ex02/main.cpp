@@ -6,7 +6,7 @@
 /*   By: rertzer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:23:06 by rertzer           #+#    #+#             */
-/*   Updated: 2023/04/01 12:25:45 by rertzer          ###   ########.fr       */
+/*   Updated: 2023/04/09 12:45:34 by rertzer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << " 1000 / 3 = " << c / d << std::endl;
+	std::cout << " 1000 / 3" << c / d << std::endl;
 	return 0;
 }

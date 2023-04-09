@@ -6,7 +6,7 @@
 /*   By: rertzer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:51:06 by rertzer           #+#    #+#             */
-/*   Updated: 2023/03/26 15:20:40 by rertzer          ###   ########.fr       */
+/*   Updated: 2023/04/09 12:41:20 by rertzer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ Fixed::Fixed(float const flt)
 {
 	std::cout << "Float constructor called\n";
 	this->_number  = (int)roundf(flt * (1 << this->_fract));
-	std::cout << "flt: " << flt << " numb: " << this->_number << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src)
 {
 	std::cout << "Copy constructor called\n";
-	this->_number = src.getRawBits();
+	*this = src;
 }
 
 Fixed::~Fixed(void)
